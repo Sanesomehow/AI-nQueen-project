@@ -19,14 +19,6 @@ function solveNQueens() {
     const solutions = [];
     solve(0, []);
 
-    totalSolutions.textContent = `Total no. of Solutions: ${solutions.length}`;
-    solutionContainer.innerHTML = '';
-    if (solutions.length > 0) {
-        displaySolution(solutions[Math.floor(Math.random() * solutions.length)]);
-    } else {
-        solutionContainer.textContent = 'No solutions found.';
-    }
-
     function isSafe(row, col, solution) {
         return solution.every(function(queenCol, queenRow) {
             return col !== queenCol && Math.abs(row - queenRow) !== Math.abs(col - queenCol);
@@ -48,21 +40,4 @@ function solveNQueens() {
         }
     }
 
-    function displaySolution(solution) {
-        const chessboard = document.createElement('div');
-        chessboard.className = 'chessboard';
-
-        chessboard.style.gridTemplateColumns = `repeat(${n}, 40px)`;
-        chessboard.style.gridTemplateRows = `repeat(${n}, 40px)`;
-
-        for (let row = 0; row < n; row++) {
-            for (let col = 0; col < n; col++) {
-                const cell = document.createElement('div');
-                cell.className = `cell ${col === solution[row] ? 'queen' : ''}`;
-                chessboard.appendChild(cell);
-            }
-        }
-
-        solutionContainer.appendChild(chessboard);
-    }
 }
