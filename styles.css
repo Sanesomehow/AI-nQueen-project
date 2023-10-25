@@ -95,3 +95,55 @@ p {
     margin-top: 20px;
 }
 
+@media (max-width: 768px) {
+    body {
+        align-items: normal; /* Reset alignment for smaller screens */
+    }
+
+    .container {
+        margin: 1rem; /* Adjust margin for smaller screens */
+    }
+
+    h1 {
+        padding: 10px 0; /* Adjust padding for smaller screens */
+    }
+
+    label {
+        font-size: 18px; /* Smaller font size for labels on smaller screens */
+    }
+
+    .form-range::-moz-range-thumb {
+        background: #008264; /* Adjust range thumb color for smaller screens */
+    }
+
+    output {
+        font-size: 18px; /* Smaller font size for output on smaller screens */
+    }
+
+    #solveBtn {
+        margin: 10px 0; /* Adjust margin for the Solve button on smaller screens */
+    }
+
+    p {
+        font-size: 18px; /* Smaller font size for paragraphs on smaller screens */
+        margin: 10px;
+    }
+
+    .chessboard {
+        grid-template-columns: repeat(var(--n), 30px); /* Adjust cell size for smaller screens */
+        grid-template-rows: repeat(var(--n), 30px);
+        gap: 1px; /* Reduce gap between cells on smaller screens */
+        margin-top: 10px; /* Adjust margin for the chessboard on smaller screens */
+    }
+
+    .cell {
+        width: 30px; /* Adjust cell size for smaller screens */
+        height: 30px;
+        font-size: 0.9rem; /* Smaller font size for cells on smaller screens */
+    }
+
+    .cell img {
+        max-width: 90%; /* Reduce image size for smaller screens */
+        max-height: 90%;
+    }
+}
